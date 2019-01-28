@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "start": "node .",
+    "start:production": "NODE_ENV=production node .",
     "test": "NODE_ENV=test mocha tests --recursive",
     "posttest": "npm run lint"
   },
