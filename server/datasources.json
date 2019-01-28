@@ -1,14 +1,10 @@
 {
   "db": {
-    "name": "db",
-    "connector": "memory"
-  },
-  "mydb": {
     "host": "localhost",
     "port": 27017,
     "url": "",
     "database": "foodtruck",
-    "name": "mydb",
+    "name": "db",
     "connector": "mongodb"
   }
 }

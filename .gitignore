@@ -18,6 +18,4 @@ coverage
 node_modules
 npm-debug.log
 .editorconfig
-.eslintignore
-.eslintrc
 .yo-rc.json

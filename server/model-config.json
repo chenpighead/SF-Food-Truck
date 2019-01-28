@@ -36,7 +36,7 @@
     "public": false
   },
   "shop": {
-    "dataSource": "mydb",
+    "dataSource": "db",
     "public": true
   }
 }

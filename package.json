@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "engines": {
-    "node": ">=6"
+    "node": ">=11"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "start": "node .",
-    "test": "mocha tests --recursive",
+    "test": "NODE_ENV=test mocha tests --recursive",
     "posttest": "npm run lint"
   },
   "dependencies": {
@@ -26,8 +26,13 @@
     "strong-error-handler": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^3.17.1",
+    "eslint": "^5.12.1",
     "eslint-config-loopback": "^8.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "mocha": "^5.2.0",
     "should": "^13.2.3",
     "supertest": "^3.4.2"
