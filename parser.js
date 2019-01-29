@@ -1,5 +1,5 @@
 
-const raw = require('foodtruck-rows.json')
+const raw = require('./foodtruck-rows.json')
 const axios = require('axios')
 
 const columns = raw.meta.view.columns
