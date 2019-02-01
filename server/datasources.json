@@ -5,6 +5,7 @@
     "url": "",
     "database": "foodtruck",
     "name": "db",
-    "connector": "mongodb"
+    "connector": "mongodb",
+    "allowExtendedOperators": "true"
   }
 }
