@@ -1,5 +1,29 @@
 
 module.exports = function (Shop) {
+  /*
+     Following section is for hiding write-related remoteMethods from the public.
+     In this way, we only expose read-only operations on our model, and all
+     POST, PUT, DELETE verbs are hidden.
+   */
+  // Remove (POST) /shops
+  Shop.disableRemoteMethodByName('create')
+  // Remove (Patch) /shops
+  Shop.disableRemoteMethodByName('upsert')
+  // Remove (POST) /shops/{id}/replace, (POST) /shops/replaceOrCreate
+  Shop.disableRemoteMethodByName('replaceOrCreate')
+  // Remove (DELETE) /shops/:id
+  Shop.disableRemoteMethodByName('deleteById')
+  // Remove (PUT) /shops/:id, (POST) /shops/:id/replace
+  Shop.disableRemoteMethodByName('replaceById')
+  // Remove (POST) /shops/update
+  Shop.disableRemoteMethodByName('updateAll')
+  // Remove (PATCH) /shops/:id
+  Shop.disableRemoteMethodByName('prototype.updateAttributes')
+  // Remove (GET|POST) /shops/change-stream
+  Shop.disableRemoteMethodByName('createChangeStream')
+  // Remove (POST) /shops/upsertWithWhere
+  Shop.disableRemoteMethodByName('upsertWithWhere')
+
   Shop.nearby = async function (name, lat, lon) {
     // Reference location for getting nearby shops. We use Uber HQ for now,
     // but can be modified to user's current location.
