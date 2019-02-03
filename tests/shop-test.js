@@ -27,6 +27,7 @@ describe.skip('API Shop POST/PUT/DELETE tests', function () {
  * Test the /GET route
  */
 describe('API Shop GET tests', function () {
+  // create mock shops for testing
   before(async function () {
     const Shop = app.models.Shop
     await Shop.create({ name: 'shop1' })
@@ -47,6 +48,34 @@ describe('API Shop GET tests', function () {
         done()
       })
   })
+
+  it('should get shops count', function (done) {
+    request
+      .get('/api/shops/count')
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end(function (err, res) {
+        if (err) return done(err)
+        res.body.count.should.equal(3)
+        done()
+      })
+  })
 })
 
-// add integration test
+/*
+ * TODO: Add tests for the user scenario, integration test, end-to-end test
+ * XXX: We should move these to a separate file once we have more features!
+ */
+describe.skip('API Shop search tests', function () {
+  // TODOs
+  it('should get search results', function (done) {
+    // TODOs
+  })
+})
+
+describe.skip('API Shop search nearby tests', function () {
+  // TODOs
+  it('should get search nearby results', function (done) {
+    // TODOs
+  })
+})
