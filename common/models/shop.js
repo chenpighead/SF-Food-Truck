@@ -24,7 +24,7 @@ module.exports = function (Shop) {
   // Remove (POST) /shops/upsertWithWhere
   Shop.disableRemoteMethodByName('upsertWithWhere')
 
-  Shop.nearby = async function (name, lat, lon) {
+  Shop.nearby = async function (name, lat, lng) {
     // Reference location for getting nearby shops. We use Uber HQ for now,
     // but can be modified to user's current location.
     var userLocation = { lat: 37.7811489, lng: -122.4579986 }
@@ -47,7 +47,7 @@ module.exports = function (Shop) {
     accepts: [
       { arg: 'name', type: 'string' },
       { arg: 'lat', type: 'number' },
-      { arg: 'lon', type: 'number' }],
+      { arg: 'lng', type: 'number' }],
     returns: { type: 'array', root: true },
     http: { verb: 'get' }
   })
